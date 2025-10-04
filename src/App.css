@@ -1,0 +1,83 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/* Responsive helpers used by components */
+.container{max-width:1200px;margin:0 auto;padding:0 1rem;width:100%}
+
+@media (max-width: 768px){
+  #searchinput{width:100vw}
+  #searchbtn{width:auto}
+  header{height:auto;padding:1rem 0}
+}
+
+.premium-search-bar {
+  font-family: 'Inter', sans-serif;
+}
+
+#searchinput {
+  box-shadow: 
+    inset 0 2px 4px rgba(0,0,0,0.05),
+    0 4px 15px rgba(0,0,0,0.1);
+}
+
+#searchbtn {
+  position: relative;
+  overflow: hidden;
+}
+
+#searchbtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+#searchbtn:hover::before {
+  left: 100%;
+}
+
+/* Smooth focus animation */
+#searchinput:focus {
+  animation: gentlePulse 2s ease-in-out;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+
+
+
+/* Smooth animations for the search bar */
+@keyframes gentleGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+.animate-gentle-glow {
+  animation: gentleGlow 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar for suggestions */
+.premium-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.premium-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.premium-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.premium-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
